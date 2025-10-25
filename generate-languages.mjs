@@ -1,6 +1,5 @@
 import fs from "fs/promises";
 import path from "path";
-// Use the new, more reliable library
 import { isBinary } from "istextorbinary";
 
 const languagesDirPath = path.resolve("languages");
@@ -41,7 +40,6 @@ async function generateLanguagesFile() {
           if (stats.isFile()) {
             const buffer = await fs.readFile(filePath);
 
-            // The new library correctly handles buffers
             if (await isBinary(filePath, buffer)) {
               console.log(`- Skipping binary file: ${file}`);
               skippedCount++;

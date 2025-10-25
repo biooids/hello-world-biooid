@@ -10,13 +10,10 @@ export default function Welcome({ languages }: WelcomeProps) {
   return (
     <div className="flex-1 bg-black overflow-y-auto p-4 sm:p-8">
       <div className="max-w-5xl mx-auto">
-        {/* QuickStats remains the primary data dashboard */}
         <QuickStats languages={languages} />
 
-        {/* Main Welcome & Info Dashboard */}
         <div className="border border-green-500 mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* Column 1: System Status & Instructions */}
             <div className="p-6 sm:p-8 border-b md:border-b-0 md:border-r border-green-500">
               <h1 className="text-green-500 text-3xl sm:text-4xl font-mono font-bold mb-4">
                 &gt; HELLO WORLD<span className="animate-pulse">_</span>
@@ -61,7 +58,6 @@ export default function Welcome({ languages }: WelcomeProps) {
               </div>
             </div>
 
-            {/* Column 2: ASCII Art / System Banner */}
             <div className="p-6 sm:p-8 flex items-center justify-center bg-green-500 bg-opacity-5">
               <pre className="text-green-500 font-mono text-xs overflow-x-auto">
                 {`  _____ _____ __    __    _____

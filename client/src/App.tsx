@@ -7,11 +7,8 @@ import EditLanguage from "./pages/EditLanguage";
 import CreateLanguage from "./pages/CreateLanguage";
 import CompareMode from "./components/CompareMode";
 import { languages } from "./data/languages";
-import { Menu, Code2 } from "lucide-react"; // Import Menu and Code2
+import { Menu, Code2 } from "lucide-react";
 
-/**
- * A new header component that only appears on small screens.
- */
 function MobileHeader({ onOpenMenu }: { onOpenMenu: () => void }) {
   return (
     <header className="md:hidden p-4 flex items-center justify-between border-b border-green-500 bg-black">
@@ -32,11 +29,10 @@ function MobileHeader({ onOpenMenu }: { onOpenMenu: () => void }) {
   );
 }
 
-// The Layout now handles showing either the current page OR the Compare Mode
 function AppLayout() {
   const [compareMode, setCompareMode] = useState(false);
   const [selectedForCompare, setSelectedForCompare] = useState<string[]>([]);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleToggleCompare = (id: string) => {
     setSelectedForCompare((prev) =>
@@ -57,10 +53,9 @@ function AppLayout() {
         selectedForCompare={selectedForCompare}
         onToggleCompare={handleToggleCompare}
         isMobileMenuOpen={isMobileMenuOpen}
-        onCloseMobileMenu={() => setIsMobileMenuOpen(false)} // Pass close function
+        onCloseMobileMenu={() => setIsMobileMenuOpen(false)}
       />
 
-      {/* Overlay for mobile menu */}
       {isMobileMenuOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
@@ -77,7 +72,7 @@ function AppLayout() {
               onClose={() => setCompareMode(false)}
             />
           ) : (
-            <Outlet /> // This is where the routed page (Welcome, Detail, etc.) will render
+            <Outlet />
           )}
         </div>
       </main>

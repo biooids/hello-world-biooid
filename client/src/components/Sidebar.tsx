@@ -9,7 +9,7 @@ import {
   GitCompare,
   CheckSquare,
   Square,
-  X, // <-- Added X icon
+  X,
 } from "lucide-react";
 import { Language } from "../data/languages";
 
@@ -19,8 +19,8 @@ interface SidebarProps {
   onToggleCompareMode: () => void;
   selectedForCompare: string[];
   onToggleCompare: (id: string) => void;
-  isMobileMenuOpen: boolean; // <-- New prop
-  onCloseMobileMenu: () => void; // <-- New prop
+  isMobileMenuOpen: boolean;
+  onCloseMobileMenu: () => void;
 }
 
 export default function Sidebar({
@@ -29,8 +29,8 @@ export default function Sidebar({
   onToggleCompareMode,
   selectedForCompare,
   onToggleCompare,
-  isMobileMenuOpen, // <-- Destructure new prop
-  onCloseMobileMenu, // <-- Destructure new prop
+  isMobileMenuOpen,
+  onCloseMobileMenu,
 }: SidebarProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
@@ -107,7 +107,7 @@ export default function Sidebar({
           </button>
           <Link
             to="/create"
-            onClick={onCloseMobileMenu} // <-- Added close handler
+            onClick={onCloseMobileMenu}
             className="flex-1 p-2 border border-green-500 bg-black text-green-500 hover:bg-green-500 hover:text-black transition-all font-mono text-sm flex items-center justify-center gap-2"
           >
             <PlusSquare size={16} /> CREATE
@@ -127,7 +127,7 @@ export default function Sidebar({
 
         <Link
           to="/"
-          onClick={onCloseMobileMenu} // <-- Added close handler
+          onClick={onCloseMobileMenu}
           className="w-full mb-3 p-2 border border-green-500 bg-black text-green-500 hover:bg-green-500 hover:text-black transition-all font-mono text-sm flex items-center justify-center gap-2"
         >
           <Home size={16} />
@@ -185,7 +185,7 @@ export default function Sidebar({
               key={lang.id}
               to={`/language/${lang.id}`}
               style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
-              onClick={onCloseMobileMenu} // <-- Added close handler
+              onClick={onCloseMobileMenu}
               className="block w-full text-left p-3 mb-1 font-mono transition-all border bg-black text-green-500 border-green-500 hover:bg-green-500 hover:bg-opacity-10"
             >
               <div className="font-bold text-sm mb-1 flex items-center justify-between">

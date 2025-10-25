@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
-// --- Custom Modal Component ---
 interface ModalProps {
   title: string;
   message: string;
@@ -26,10 +25,7 @@ function Modal({ title, message, onClose }: ModalProps) {
   );
 }
 
-// --- Create Language Page Component ---
-
 export default function CreateLanguage() {
-  // State to control the modal's visibility
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleCreate = () => {
@@ -50,8 +46,6 @@ export default function CreateLanguage() {
           <h2 className="text-xl font-bold">&gt; CREATE NEW LANGUAGE</h2>
         </div>
         <div className="p-6 space-y-4">
-          {/* --- All Metadata Fields --- */}
-
           <div>
             <label className="block text-xs opacity-70 mb-1">NAME</label>
             <input
@@ -128,7 +122,6 @@ export default function CreateLanguage() {
             />
           </div>
 
-          {/* --- Create Button --- */}
           <button
             onClick={handleCreate}
             className="w-full p-2 border border-green-500 bg-green-500 text-black font-bold hover:bg-green-600 transition-all"
@@ -138,7 +131,6 @@ export default function CreateLanguage() {
         </div>
       </div>
 
-      {/* Conditionally render the modal */}
       {isModalOpen && (
         <Modal
           title="System Alert"
