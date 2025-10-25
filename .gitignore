@@ -1,0 +1,22 @@
+# Node dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary / cache files
+*.tmp
+*.swp
+
+# Ignore system or backup files
+*~
