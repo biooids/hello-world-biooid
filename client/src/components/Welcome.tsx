@@ -78,6 +78,10 @@ export default function Welcome({ languages }: WelcomeProps) {
             </div>
           </div>
         </div>
+
+        <p className="text-center text-green-500 font-mono  opacity-50 mt-8">
+          &gt; created by a banned biooid
+        </p>
       </div>
     </div>
   );
